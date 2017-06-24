@@ -1,0 +1,20 @@
+<html>
+<head>
+    <script>
+     const {ipcRenderer} = require('electron')
+
+     ipcRenderer.on('time', (event, time) => {
+         document.body.innerHTML = time
+     })
+    </script>
+    <style>
+     body {
+         padding-top:20px;
+         font-size: 48pt;
+     }
+    </style>
+</head>
+<body>
+    0s
+</body>
+</html>

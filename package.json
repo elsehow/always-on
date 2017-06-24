@@ -1,0 +1,21 @@
+{
+  "author": "elsehow",
+  "license": "BSD-3-Clause",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "tape test/*.js | tap-spec",
+    "watch": "runwatch \"**/*.js\" -r \"npm test\""
+  },
+  "devDependencies": {
+    "runwatch": "^0.1.3",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.5.1"
+  },
+  "dependencies": {
+    "kefir": "^3.7.2",
+    "menubar": "^5.2.3",
+    "moment": "^2.18.1",
+    "pretty-ms": "^2.1.0"
+  }
+}
