@@ -15,6 +15,10 @@ npm i
 npm start
 ```
 
+## todo
+
+- Store usage every day for for future stats
+
 ## license
 
 BSD
