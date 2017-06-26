@@ -18,6 +18,10 @@ npm start
 ## todo
 
 - Store usage every day for for future stats
+    - Export times as CSV
+- ~~Pause counting on idle time~~
+- Preferences (like idle time)
+
 
 ## license
 
