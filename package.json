@@ -4,8 +4,8 @@
   "main": "app.js",
   "scripts": {
     "start": "electron .",
-    "rebuild": "electron-rebuild",
     "test": "tape test/*.js | tap-spec",
+    "postinstall": "electron-rebuild",
     "watch": "runwatch \"**/*.js\" -r \"npm test\""
   },
   "devDependencies": {

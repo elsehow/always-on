@@ -2,9 +2,10 @@ const kefir = require('kefir')
 const sum = (a, b) => a+b
 const moment = require('moment')
 const pretty = require('pretty-ms')
-const interval = 1000
 const system = require('@paulcbetts/system-idle-time')
-
+const interval = 1000
+// config / future settings
+const idleThreshold = 2*60*1000 // 2 minutes
 
 // -> KefirStream<Moment>
 function momentS () {
@@ -14,7 +15,7 @@ function momentS () {
 
 
 // Float -> KefirStream<Bool>
-function activeS (threshold=10000) {
+function activeS (threshold=idleThreshold) {
   // Returns true if user is actively using comp
   // or false if user is idle.
   return kefir
