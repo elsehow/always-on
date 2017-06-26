@@ -3,6 +3,7 @@ const sum = (a, b) => a+b
 const moment = require('moment')
 const pretty = require('pretty-ms')
 const interval = 1000
+const system = require('@paulcbetts/system-idle-time')
 
 
 // -> KefirStream<Moment>
@@ -12,12 +13,23 @@ function momentS () {
 }
 
 
+// Float -> KefirStream<Bool>
+function activeS (threshold=10000) {
+  // Returns true if user is actively using comp
+  // or false if user is idle.
+  return kefir
+    .fromPoll(1000, system.getIdleTime)
+    .map(x => x < threshold)
+}
+
+
 // KefirStream<Moment> -> KefirStream<String>
 function elapsedS (mS) {
   // takes a stream of moments,
   // returns a stream of strings describing durations
   return mS
     .map(m => interval)
+    .filterBy(activeS())
     .scan(sum)
     .map(pretty)
 }
@@ -65,5 +77,6 @@ function uptimeS (resetMoment, modulo) {
     newUptimeS,
   ])
 }
+
 
 module.exports = uptimeS

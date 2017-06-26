@@ -4,15 +4,19 @@
   "main": "app.js",
   "scripts": {
     "start": "electron .",
+    "rebuild": "electron-rebuild",
     "test": "tape test/*.js | tap-spec",
     "watch": "runwatch \"**/*.js\" -r \"npm test\""
   },
   "devDependencies": {
+    "electron": "^1.6.11",
+    "electron-rebuild": "^1.5.11",
     "runwatch": "^0.1.3",
     "tap-spec": "^4.1.1",
     "tape": "^4.5.1"
   },
   "dependencies": {
+    "@paulcbetts/system-idle-time": "^1.0.4",
     "kefir": "^3.7.2",
     "menubar": "^5.2.3",
     "moment": "^2.18.1",
