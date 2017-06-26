@@ -20,7 +20,9 @@ npm start
 - Store usage every day for for future stats
     - Export times as CSV
 - ~~Pause counting on idle time~~
-- Preferences (like idle time)
+- Preferences screen
+    - idle threshold (minutes)
+    - new day turnover (default midnight)
 
 
 ## license
